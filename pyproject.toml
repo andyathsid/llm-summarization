@@ -3,6 +3,8 @@ name = "llm-summarization"
 version = "0.1.0"
 requires-python = ">=3.14"
 dependencies = [
+    "bert-score>=0.3.13",
+    "datasets>=5.1.0",
     "docling>=2.138.0",
     "fastembed>=0.7.4",
     "huggingface-hub>=1.0.0",
@@ -11,9 +13,12 @@ dependencies = [
     "langchain-openrouter>=0.2.9",
     "langchain-postgres>=0.0.17",
     "mlflow>=3.17.2",
+    "openai>=3.39.0",
     "pandas>=2.3.0",
     "psycopg[binary]>=3.2.0",
     "python-dotenv>=1.2.4",
+    "torch==2.14.1",
+    "torchvision==0.29.1",
     "tqdm>=4.67.1",
     "transformers>=5.19.0",
 ]
@@ -29,6 +34,15 @@ build-backend = "uv_build"
 
 [tool.uv]
 package = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu130" }
+torchvision = { index = "pytorch-cu130" }
+
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
 
 [tool.uv.build-backend]
 module-name = "utils"
