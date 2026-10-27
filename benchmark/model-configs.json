@@ -1,0 +1,45 @@
+{
+  "defaults": {
+    "temperature": 0,
+    "max_output_tokens": 8192,
+    "timeout_seconds": 1800
+  },
+  "models": [
+    {
+      "enabled": false,
+      "provider": "ollama",
+      "model": "LiquidAI/lfm2.5-2.6b:q4_k_m",
+      "tokenizer": "LiquidAI/LFM2.5-2.6B"
+    },
+    {
+      "enabled": false,
+      "provider": "ollama",
+      "model": "qwen3.5:4b-q4_K_M",
+      "tokenizer": "Qwen/Qwen3.5-4B"
+    },
+    {
+      "enabled": false,
+      "provider": "ollama",
+      "model": "granite4.2:3b-q4_K_M",
+      "tokenizer": "ibm-granite/granite-4.2-3b"
+    },
+    {
+      "enabled": true,
+      "provider": "ollama",
+      "model": "openbmb/minicpm5-2b",
+      "tokenizer": "openbmb/MiniCPM5-2B"
+    },
+    {
+      "enabled": false,
+      "provider": "ollama",
+      "model": "maternion/ling-3.0-tiny:8b-Q4_K_M",
+      "tokenizer": "inclusionAI/Ling-3.0-tiny"
+    },
+    {
+      "enabled": false,
+      "provider": "ollama",
+      "model": "tomng/nanbeige4.1:3b-q4_K_M",
+      "tokenizer": "Nanbeige/Nanbeige4.1-3B"
+    }
+  ]
+}
