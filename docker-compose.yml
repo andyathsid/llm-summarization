@@ -30,8 +30,14 @@ services:
       - --artifacts-destination
       - /mlflow-data/artifacts
     volumes:
-      - mlflow_data:/mlflow-data
+      - type: bind
+        source: ./mlflow.db
+        target: /mlflow-data/mlflow.db
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ./mlartifacts
+        target: /mlflow-data/artifacts
 
 volumes:
   pgvector_data:
-  mlflow_data:
